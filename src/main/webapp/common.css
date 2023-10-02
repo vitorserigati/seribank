@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+body{
+	display: block;
+	padding: 20px 15px;
+}
+.title{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: auto 15px;
+}
+.title h1{
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: rgb(216, 216, 216);
+}
+
+.header_common{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 50px;
+	border-radius: 5px;
+	background-color: rgb(37, 40, 48);
+	box-shadow: 1px 1px 25px rgba(135, 14, 14, 0.5);
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.main_container{
+	width: 100%;
+	height: 500px;
+	border-radius: 20px;
+	background-color: rgb(37, 40, 48);
+	box-shadow: 1px 1px 25px rgba(135, 14, 14, 0.5);
+	display: flex;
+	flex-direction: row;
+	gap: 15px;
+	padding: 15px;
+}
+
+.main{
+	height: 100%;
+	width: 100%;
+	border-radius: 20px;
+	box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
+	text-align: center;
+	padding: 20px;
+}
+
+.main h1{
+	font-size: 1.2rem;
+	background-color: rgb(44, 47, 56);
+	padding: 4px 0;
+	border-radius: 5px;
+}
+
+.transfer_form{
+	position: relative;
+	/*
+	background-color: rgb(44, 47, 56);
+	*/
+	padding: 8px;
+	margin-top: 15px;
+	border-radius: 20px;
+	box-sizing: border-box;
+	height: 90%;
+}
+.transfer_form h1{
+	background-color: transparent;
+}
+
+.buttons{
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+	width: 95%;
+	display: flex;
+	justify-content: space-between;
+	margin-top:10px;
+}
+
+.buttons input{
+	border: none;
+	padding: 4px 8px;
+	width: 90px;
+	background-color: rgb(21, 21, 21);
+	color: rgb(216, 216, 216);
+	font-weight:bold;
+	border-radius: 5px;	
+}
+
+.buttons input:hover{
+	background-color: rgb(128, 0, 0);
+}
