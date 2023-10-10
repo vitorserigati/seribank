@@ -44,6 +44,7 @@ public class TransactionController extends HttpServlet {
 		try {
 			user.getWallet().withdraw(val);
 		} catch (Exception e) {
+			request.setAttribute("e", e.getMessage());
 			request.getRequestDispatcher("/error.jsp").forward(request, response);
 		}
 		target.getWallet().deposit(val);

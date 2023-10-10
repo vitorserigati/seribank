@@ -31,30 +31,37 @@ public class LoginController extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		User user = null;
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		String email = null;
 		String password = null;
- 
+		RequestDispatcher dispatcher;
 		email = request.getParameter("email");
 		password = request.getParameter("password");
-		RequestDispatcher dispatcher;
 		
-		if(email != null && password != null) {
-			User user = userDataManager.getUserByEmail(email);
-			if (user.getPassword().equals(password)) {
+		
+		
+		
+		if(email != "" && password != "") {		
+			user = userDataManager.getUserByEmail(email);	
+			
+			if (user != null && user.getPassword().equals(password)) {
 				request.setAttribute("user", userDataManager.getUserByEmail(email));
 				request.setAttribute("dtManager", userDataManager);
 				dispatcher = request.getRequestDispatcher("home.jsp");
 				dispatcher.forward(request, response);
 			}else {
-				dispatcher = request.getRequestDispatcher("error.jsp");
+				request.setAttribute("e", "Email ou Senha incorretos.");
+				dispatcher = request.getRequestDispatcher("error.jsp");				
 				dispatcher.forward(request, response);
 			}
 		}else {
+			request.setAttribute("e", "Por favor, preencha todos os campos!");
 			dispatcher = request.getRequestDispatcher("error.jsp");
 			dispatcher.forward(request, response);
 		}
+		
 		
 		
 	}

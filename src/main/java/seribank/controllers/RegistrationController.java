@@ -26,8 +26,7 @@ public class RegistrationController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-		try {
-			
+	
 			String name = request.getParameter("name");
 			String email = request.getParameter("email");
 			String password = request.getParameter("password");
@@ -37,13 +36,9 @@ public class RegistrationController extends HttpServlet {
 			if (userDataManager.registerUser(name, cpf, phone, address, password, email)) {		
 				request.getRequestDispatcher("/login.jsp").forward(request, response);
 			}else {
+				request.setAttribute("e", "Algo deu errado em seu cadastro! Tente Novamente");
 				request.getRequestDispatcher("/error.jsp").forward(request, response);
-			}
-				
-		}catch(Exception e) {
-			System.out.println("Um erro corroeu: " + e.getMessage());
-		}
-			
+			}		
 		
 	}
 

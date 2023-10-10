@@ -11,28 +11,29 @@ public class UserDataManager {
 	private static int currentUserId;
 	private List<User> userList;
 	private List<Wallet> walletList;
-	
+
 	private UserDataManager() {
 		userList = new ArrayList<>();
 		walletList = new ArrayList<>();
 		Wallet wallet = new Wallet();
 		currentUserId = 0;
-		User user = new User(currentUserId, "Henrique Serigati", wallet, "43306676810", "11960852305", "Rua Alcino Fidelis, 304", "password", "teste@teste.com");
+		User user = new User(currentUserId, "Henrique Serigati", wallet, "43306676810", "11960852305",
+				"Rua Alcino Fidelis, 304", "password", "teste@teste.com");
 		userList.add(user);
 		walletList.add(user.getWallet());
 		currentUserId++;
 	}
-	
+
 	public static UserDataManager getInstance() {
 		if (instance == null) {
 			instance = new UserDataManager();
 		}
 		return instance;
 	}
-	
-	public boolean registerUser(String name, String cpf, String phone, String address, String password, String email) {	
-		for(User user : userList) {
-			if(user.getEmail().equals(email)) {
+
+	public boolean registerUser(String name, String cpf, String phone, String address, String password, String email) {
+		for (User user : userList) {
+			if (user.getEmail().equals(email)) {
 				return false;
 			}
 		}
@@ -43,31 +44,31 @@ public class UserDataManager {
 		currentUserId++;
 		return true;
 	}
-	
+
 	public User getUser(int id) {
-		for(User user : userList) {
-			if(user.getIdUser() == id) {
+		for (User user : userList) {
+			if (user.getIdUser() == id) {
 				return user;
 			}
 		}
 		return null;
 	}
-	
+
 	public User getUserByEmail(String email) {
 		for (User user : userList) {
-			if(user.getEmail().equals(email)) {
+			if (user.getEmail().equals(email)) {
 				return user;
 			}
 		}
 		return null;
 	}
-	
-	public List<User> getUsersExceptBy(int id){
+
+	public List<User> getUsersExceptBy(int id) {
 		List<User> list = new ArrayList<>();
-		for(User user : userList) {
-			if(user.getIdUser() == id) {
+		for (User user : userList) {
+			if (user.getIdUser() == id) {
 				continue;
-			}else {
+			} else {
 				list.add(user);
 			}
 		}
