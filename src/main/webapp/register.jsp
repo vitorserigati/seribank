@@ -17,6 +17,8 @@
 <body>
 
 	<form method="post" action="register" class="login_form" style="height: 80vh">
+	<div style="width: 100%; text-align: left; margin-left: 20px; margin-top: 10px;">
+	<a href="/Seribank/login.jsp">Voltar</a></div>
 	<div class="login_content_contaier" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
 		<div class="title">
 			<h1>Cadastro:</h1>
@@ -27,6 +29,7 @@
 				name="name"
 				id="name"
 				placeholder="Nome"
+				required="required"
 				/>
 			</div>
 		
@@ -36,6 +39,7 @@
 					name="email" 
 					id="email"
 					placeholder="E-mail"
+					required="required"
 				/>
 			</div>
 		
@@ -45,6 +49,7 @@
 					name="password"
 					id="password"
 					placeholder="Password"
+					required="required"
 				/>
 			</div>
 		
@@ -54,6 +59,7 @@
 					name="cpf"
 					id="cpf"
 					placeholder="Cpf"
+					required="required"
 				/>
 			</div>
 		
@@ -63,6 +69,7 @@
 					name="phone"
 					id="phone"
 					placeholder="Celular"
+					required="required"
 				/>
 			</div>
 		
@@ -72,10 +79,11 @@
 					name="address"
 					id="address"
 					placeholder="Endereço"
+					required="required"
 				/>
 			</div>
 	
-		<div class="buttons">
+			<div class="buttons">
 				<input type="submit" value="Cadastrar"/>
 				<input type="reset" value="Limpar"/>
 			</div>

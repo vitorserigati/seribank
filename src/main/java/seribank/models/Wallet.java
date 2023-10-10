@@ -17,6 +17,7 @@ public class Wallet {
 	public void setCurrentBalance(double currentBalance) {
 		this.currentBalance = currentBalance;
 	}
+	
 	public Wallet() {
 		super();
 		this.walletId = Wallet.currentId++;
@@ -31,6 +32,18 @@ public class Wallet {
 		super();
 		this.walletId = walletId;
 		this.currentBalance = currentBalance;
+	}
+	
+	public void withdraw(double value) throws Exception {
+		if(this.currentBalance > 0 && this.currentBalance >= value) {
+			this.currentBalance -= value;
+		}else {
+			throw new Exception("Not enough founds");
+		}
+	}
+	
+	public void deposit(double value) {
+		this.currentBalance += value;
 	}
 	
 	@Override

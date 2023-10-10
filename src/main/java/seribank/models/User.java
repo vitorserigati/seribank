@@ -110,8 +110,4 @@ public class User {
 	public String toString() {
 		return "Nome: "+ name + "\nCpf: "+ cpf + "\nCelular: " + phone + "\nEndereço: " + address + "\nEmail: " + email + "\nSaldo: " + wallet.getCurrentBalance();				
 	}
-	
-	public static User findByEmail(String email) {
-		throw new UnsupportedOperationException("Not implemented yet");
-	}
 }

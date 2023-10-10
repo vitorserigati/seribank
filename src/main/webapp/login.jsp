@@ -6,10 +6,10 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./reset.css"/>
 <link rel="stylesheet" href="./style.css" />
-<title>SeriBank</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Cormorant+SC:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<title>SeriBank</title>
 </head>
 <body>
 	

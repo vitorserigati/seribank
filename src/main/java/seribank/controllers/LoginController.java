@@ -1,6 +1,7 @@
 package seribank.controllers;
 
 import java.io.IOException;
+import seribank.ddo.UserDataManager;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,6 +17,7 @@ import seribank.models.User;
 @WebServlet("/LoginController")
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static UserDataManager userDataManager = UserDataManager.getInstance();
        
     public LoginController() {
         super();
@@ -23,6 +25,8 @@ public class LoginController extends HttpServlet {
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	request.getRequestDispatcher("/login.jsp").forward(request, response);
+   	
+    	
 	}
 
 	
@@ -37,9 +41,11 @@ public class LoginController extends HttpServlet {
 		RequestDispatcher dispatcher;
 		
 		if(email != null && password != null) {
-			User user = User.findByEmail(email);
+			User user = userDataManager.getUserByEmail(email);
 			if (user.getPassword().equals(password)) {
-				dispatcher = request.getRequestDispatcher("login.jsp");
+				request.setAttribute("user", userDataManager.getUserByEmail(email));
+				request.setAttribute("dtManager", userDataManager);
+				dispatcher = request.getRequestDispatcher("home.jsp");
 				dispatcher.forward(request, response);
 			}else {
 				dispatcher = request.getRequestDispatcher("error.jsp");
