@@ -9,6 +9,8 @@
 <head>
 <link rel="stylesheet" href="./reset.css"/>
 <link rel="stylesheet" href="./common.css"/>
+<link rel="icon" href="./images/seribank.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="./images/seribank.ico" type="image/x-icon"/>
 <meta charset="UTF-8">
 <title>Home Page</title>
 </head>

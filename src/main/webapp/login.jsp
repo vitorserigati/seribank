@@ -8,15 +8,20 @@
 <link rel="stylesheet" href="./style.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="icon" href="./images/seribank.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="./images/seribank.ico" type="image/x-icon"/>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Cormorant+SC:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <title>SeriBank</title>
+
 </head>
 <body>
-	
 	<form action="login" method="post" class="login_form">
 	<div class="login_content_contaier" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-		<div class="title">
+		<!-- <div class="title">
 			<h1>Seri Bank</h1>
+		</div> -->
+		<div class="logo" style="margin-bottom: 0;">
+			<img src="./images/seribank_logo.png" />
 		</div>
 		
 		<div class="field" style="margin-top: 40px;">

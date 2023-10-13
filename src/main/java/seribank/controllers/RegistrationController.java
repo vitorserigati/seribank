@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/RegistrationController")
 public class RegistrationController extends HttpServlet {
@@ -33,7 +34,9 @@ public class RegistrationController extends HttpServlet {
 			String cpf = request.getParameter("cpf");
 			String phone = request.getParameter("phone");
 			String address = request.getParameter("address");
-			if (userDataManager.registerUser(name, cpf, phone, address, password, email)) {		
+			if (userDataManager.registerUser(name, cpf, phone, address, password, email)) {	
+				HttpSession session = request.getSession();
+				session.setAttribute("registrationSuccessMessage", "Registro Concluído com sucesso");
 				request.getRequestDispatcher("/login.jsp").forward(request, response);
 			}else {
 				request.setAttribute("e", "Algo deu errado em seu cadastro! Tente Novamente");

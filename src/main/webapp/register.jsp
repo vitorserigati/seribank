@@ -10,7 +10,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Cormorant+SC:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
+<link rel="icon" href="./images/seribank.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="./images/seribank.ico" type="image/x-icon"/>
 </head>
 
 
