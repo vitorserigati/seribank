@@ -49,7 +49,7 @@ public class TransactionController extends HttpServlet {
 		}
 		target.getWallet().deposit(val);
 		Date time = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		request.setAttribute("date", sdf.format(time));
 	
 		request.setAttribute("user", user);
