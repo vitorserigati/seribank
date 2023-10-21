@@ -23,14 +23,11 @@
 	
 			if(user instanceof User){
 				out.print("<h1 class='title'>Bem Vindo: " + user.getName() +"</h1>");
-			}else{
-			%>
-				<script>
-					alert("Não Foi encontrado nenhum usuário.")
-				</script>
-			<%
 			}
 		%>
+	</div>
+	<div>
+		<a href="login" style="margin-right: 15px;">Sair</a>
 	</div>
 </header>
 <section class="main_container">
